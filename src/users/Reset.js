@@ -2,6 +2,7 @@ import { useNavigate } from "react-router";
 import { handleReset } from "../services/Auth";
 import { useState } from "react";
 import { Button, Card, Container, Form } from "react-bootstrap";
+import { Base } from "../components/base";
 
 function Reset() {
   const [password, setPassword] = useState("");
@@ -25,7 +26,8 @@ function Reset() {
   };
 
   return (
-    <div>
+<Base>
+<div>
       <ResetForm
         password={password}
         setPassword={setPassword}
@@ -34,13 +36,14 @@ function Reset() {
 
       {error ? <div className="error">{error}</div> : ""}
       {successMsg ? <div className="success">{successMsg}</div> : ""}
-    </div>
+    </div></Base>
   );
 }
 
 function ResetForm({ password, setPassword, resetPassword }) {
   return (
-    <Container>
+<Base>
+<Container>
       <Card style={{ width: "25rem" }}>
         <Card.Img
           variant="top"
@@ -65,7 +68,7 @@ function ResetForm({ password, setPassword, resetPassword }) {
           <Card.Link href=" /">Login </Card.Link>
         </Card.Body>
       </Card>
-    </Container>
+    </Container></Base>
   );
 }
 

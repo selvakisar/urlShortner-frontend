@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { Button, Card, Container, Form } from "react-bootstrap";
 import { handleForget } from "../services/Auth";
+import { Base } from "../components/base";
 
 function Forget() {
   const [email, setEmail] = useState("");
@@ -24,17 +25,19 @@ function Forget() {
   };
 
   return (
-    <div>
+
+      <Base>
       <ForgetForm email={email} setEmail={setEmail} ForgetUser={ForgetUser} />
 
       {error ? <div className="error">{error}</div> : ""}
-      {successMsg ? <div className="success">{successMsg}</div> : ""}
-    </div>
+      {successMsg ? <div className="success">{successMsg}</div> : ""}</Base>
+ 
   );
 }
 
 function ForgetForm({ email, setEmail, ForgetUser }) {
   return (
+    <Base>
     <Container>
       <Card style={{ width: "25rem" }}>
         <Card.Img
@@ -60,7 +63,7 @@ function ForgetForm({ email, setEmail, ForgetUser }) {
           <Card.Link href=" /">Login </Card.Link>
         </Card.Body>
       </Card>
-    </Container>
+    </Container></Base>
   );
 }
 

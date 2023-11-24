@@ -3,6 +3,7 @@ import "../styles/auth.css";
 import { useNavigate } from "react-router";
 import { handleLogin } from "../services/Auth";
 import { Container, Card, Form, Button } from "react-bootstrap";
+import { Base } from "../components/base";
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -29,7 +30,8 @@ export const Login = () => {
   };
 
   return (
-    <div>
+
+      <Base>
       <LoginForm
         email={email}
         setEmail={setEmail}
@@ -40,13 +42,14 @@ export const Login = () => {
 
       {error ? <div className="error">{error}</div> : ""}
       {successMsg ? <div className="success">{successMsg}</div> : ""}
-    </div>
+      </Base>
+
   );
 };
 
 function LoginForm({ email, setEmail, password, setPassword, LoginUser }) {
   return (
-    <Container>
+    <Base>    <Container>
       <Card style={{ width: "25rem" }}>
         <Card.Img
           variant="top"
@@ -85,6 +88,8 @@ function LoginForm({ email, setEmail, password, setPassword, LoginUser }) {
         </Card.Body>
       </Card>
     </Container>
+    </Base>
+
   );
 }
 export default Login;
