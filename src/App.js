@@ -6,7 +6,6 @@ import Forget from './users/Forget';
 import Reset from './users/Reset';
 import { Home } from './components/Home';
 import { AllUrl } from './url/allUrl';
-import { ShortUrlClick } from './url/shortUrlClick';
 import ShortUrlForm from './url/short Ur';
 
 
@@ -22,7 +21,6 @@ function App() {
           <Route  path='/all' element={<AllUrl/>}/>
           <Route  path='/short' element={<ShortUrlForm/>}/>
           
-          <Route  path="/urlId" element={<ShortUrlClick/>}/>
 
         </Routes>
     </div>

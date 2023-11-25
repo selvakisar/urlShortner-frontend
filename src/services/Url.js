@@ -1,58 +1,44 @@
-// import axios from "axios"
 
-export const ApiUrl = "https://nanourl.onrender.com/url"
+export const ApiUrl = "https://nanourl.onrender.com/url";
+// export const ApiUrl = "http://127.0.0.1:8888/url"
 
-export async function getAllUrl(){
-    const res = await fetch (`${ApiUrl}/all`,{
-        method:"GET",
-        headers:{
-             "x-auth-token": localStorage.getItem("token") 
-        }
-    })
- const data = res.json()
- console.log(data)
- return data
+export async function getAllUrl() {
+  const res = await fetch(`${ApiUrl}/all`, {
+    method: "GET",
+    headers: {
+      "x-auth-token": localStorage.getItem("token"),
+    },
+  });
+  const data = res.json();
+  console.log(data);
+  return data;
 }
 
-
-
-export async function getShortUrl(){
-    const res = await fetch (`${ApiUrl}/:urlId`,{
-        method:"GET",
-        headers:{
-             "x-auth-token": localStorage.getItem("token") 
-        }
-    })
- const data = res.json()
- console.log(data)
- return data
+export async function getShortUrl() {
+  const res = await fetch(`${ApiUrl}/:urlId`, {
+    method: "GET",
+    headers: {
+      "x-auth-token": localStorage.getItem("token"),
+    },
+  });
+  const data = res.json();
+  console.log(data);
+  return data;
 }
 
-
-
-
-
-
-export async function handleShort(payload){
-    const res = await fetch(`${ApiUrl}/short`,{
-        method:"POST",
-        body:JSON.stringify(payload),
-        headers:{
-            "x-auth-token":localStorage.getItem("token"),
-            "Content-Type": "application/json",
-        }
-    })
-    const data = await res.json();
-    console.log(data)
-    return data
+export async function handleShort(payload) {
+  const res = await fetch(`${ApiUrl}/short`, {
+    method: "POST",
+    body: JSON.stringify(payload),
+    headers: {
+      "x-auth-token": localStorage.getItem("token"),
+      "Content-Type": "application/json",
+    },
+  });
+  const data = await res.json();
+  console.log(data);
+  return data;
 }
-
-
-
-
-
-
-
 
 // function Urlshort(){
 //     const [url,setUrl]=useState([]);

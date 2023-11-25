@@ -1,6 +1,5 @@
-import { useState } from "react";
 
-const APIauth = "https://nanourl.onrender.com/users"
+const APIauth = "https://nanourl.onrender.com/users";
 
 export async function handleSignup(payload) {
   const res = await fetch(`${APIauth}/signup`, {
@@ -43,8 +42,6 @@ export async function handleReset(payload) {
   const urlSearchParams = new URLSearchParams(window.location.search);
   const token = urlSearchParams.get("token");
 
-  
-
   const response = await fetch(`${APIauth}/reset/${token}`, {
     method: "POST",
     body: JSON.stringify(payload),
@@ -56,4 +53,3 @@ export async function handleReset(payload) {
   const data = await response.json();
   return data;
 }
-

@@ -4,7 +4,6 @@ import { handleSignup } from "../services/Auth";
 import { Card, Button, Container, Form } from "react-bootstrap";
 
 import "../styles/auth.css";
-import { Base } from "../components/base";
 
 function Signup() {
   const [name, setName] = useState("");
@@ -33,7 +32,6 @@ function Signup() {
   };
 
   return (
-<Base>
 <div className="justify-center p-3">
       <SignupForm
         name={name}
@@ -46,7 +44,7 @@ function Signup() {
       />
       {error ? <div className="error">{error}</div> : ""}
       {successMsg ? <div className="success">{successMsg}</div> : ""}
-    </div></Base>
+    </div>
   );
 }
 
@@ -62,7 +60,6 @@ function SignupForm({
   successMsg,
 }) {
   return (
- <Base>
       <Container>
         <Card style={{ width: "25rem" }}>
           <Card.Img
@@ -111,7 +108,6 @@ function SignupForm({
           </Card.Body>
         </Card>
       </Container>
-      </Base>
    
   );
 }
